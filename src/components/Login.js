@@ -1,9 +1,9 @@
 
 
-function Login(){
+export default function Login(){
     return(
         <div>
-            <button></button>
+            <button>Login</button>
         </div>
     )
 }
