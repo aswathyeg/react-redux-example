@@ -4,6 +4,8 @@ import {createSlice} from "@reduxjs/toolkit";// to create reducer in an easy way
  name:"user",  //name of the state
  initialState:{value:{name:"",age:0,email:""}},
  reducers:{//fuctions to change the the state
+
+    
 login:(state,action)=>{
     state.value=action.payload ;
 
@@ -11,4 +13,5 @@ login:(state,action)=>{
  },              
 
 });
+export const {login}=userSlice.actions;
 export default userSlice.reducer;
