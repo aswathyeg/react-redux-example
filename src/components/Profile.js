@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"; //to accessing values over states 
 
 export default function Profile(){
     const user=useSelector((state)=>state.user.value)
