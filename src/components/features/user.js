@@ -7,9 +7,10 @@ import {createSlice} from "@reduxjs/toolkit";// to create reducer in an easy way
 
     
 login:(state,action)=>{
-    state.value=action.payload ;
+    state.value=action.payload ;// acces dispatch from Login
 
 },
+
  },              
 
 });
