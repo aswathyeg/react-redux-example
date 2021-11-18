@@ -1,18 +1,23 @@
-import {createSlice} from "@reduxjs/toolkit";// to create reducer in an easy way
+import { createSlice } from "@reduxjs/toolkit";// to create reducer in an easy way
 
- export const userSlice = createSlice({ //all the information about the reducer
- name:"user",  //name of the state
- initialState:{value:{name:"",age:0,email:""}},
- reducers:{//fuctions to change the the state
+const initialStateValue = { name: "", age: 0, email: "" }
 
-    
-login:(state,action)=>{
-    state.value=action.payload ;// acces dispatch from Login
+export const userSlice = createSlice({ //all the information about the reducer
+    name: "user",  //name of the state
+    initialState: { value: initialStateValue },
+    reducers: {//fuctions to change the the state
 
-},
 
- },              
+        login: (state, action) => {
+            state.value = action.payload;// acces dispatch from Login
+
+        },
+        logout: (state) => {
+            state.value = initialStateValue;
+
+        }
+    },
 
 });
-export const {login}=userSlice.actions;
+export const { login, logout } = userSlice.actions;
 export default userSlice.reducer;
