@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {bindActionCreators, createStore} from 'redux';
+import { createStore} from 'redux';
 
 //store -globalized state 
 
@@ -34,9 +33,14 @@ const counter=(state=0,action)=>{
 };
 
 let store= createStore(counter);
-
+//display 
+store.subscribe(()=>console.log(store.getState()));
 
 //dispatch
+
+store.dispatch(increment());
+store.dispatch(decrement());
+store.dispatch(decrement());
 
 ReactDOM.render(
   <React.StrictMode>
