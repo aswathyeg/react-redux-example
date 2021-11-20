@@ -3,49 +3,53 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore} from 'redux';
+import allReducers from './reducers';
+import { Provider } from 'react-redux';
+
+const store=createStore(allReducers);
 
 //store -globalized state 
 
 //action-increment- returns an object
-const increment=()=>{
-  return{
-    type:'increment'
-  }
-}
-const decrement=()=>{
-  return{
-    type:'decrement'
-  }
-}
+// const increment=()=>{
+//   return{
+//     type:'increment'
+//   }
+// }
+// const decrement=()=>{
+//   return{
+//     type:'decrement'
+//   }
+// }
 
 //reducer
-const counter=(state=0,action)=>{
-  switch(action.type){
-    case 'increment':
-      return state+1;
+// const counter=(state=0,action)=>{
+//   switch(action.type){
+//     case 'increment':
+//       return state+1;
 
     
-    case 'decrement':
-      return state-1;
+//     case 'decrement':
+//       return state-1;
     
 
-  }
-};
+//   }
+// };
 
-let store= createStore(counter);
+// let store= createStore(counter);
 //display 
-store.subscribe(()=>console.log(store.getState()));
+// store.subscribe(()=>console.log(store.getState()));
 
 //dispatch
 
-store.dispatch(increment());
-store.dispatch(decrement());
-store.dispatch(decrement());
+// store.dispatch(increment());
+// store.dispatch(decrement());
+// store.dispatch(decrement());
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 
