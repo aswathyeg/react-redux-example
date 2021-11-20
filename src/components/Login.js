@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux" //to modify values of state 
-import { login } from "./features/user";
-import { logout } from "./features/user";
+import { login ,logout} from "./features/user";
 
 export default function Login() {
     const dispatch = useDispatch();

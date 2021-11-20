@@ -5,10 +5,15 @@ import reportWebVitals from './reportWebVitals';
 import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
 import useReducer from './components/features/user';
+import themeReducer from './components/features/theme';
+import backgroundReducer from './components/features/background';
 
 const store=configureStore({
   reducer:{
     user:useReducer,
+    theme:themeReducer,
+    background:backgroundReducer,
+
   },
 });
 ReactDOM.render(
